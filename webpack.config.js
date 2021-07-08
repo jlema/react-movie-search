@@ -1,4 +1,6 @@
 const path = require('path');
+const webpack = require('webpack');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
 	mode: 'development',
@@ -10,7 +12,7 @@ module.exports = {
 	module: {
 		rules: [
 			{
-				test: /\.js$/,
+				test: /\.js$/i,
 				exclude: /(node_modules)/,
 				use: {
 					loader: 'babel-loader',
@@ -18,6 +20,10 @@ module.exports = {
 						presets: ['@babel/preset-env', '@babel/preset-react']
 					}
 				}
+			},
+			{
+				test: /\.css$/i,
+				use: ['style-loader', 'css-loader']
 			}
 		]
 	},
@@ -27,5 +33,13 @@ module.exports = {
 		open: true,
 		port: 8000,
 		watchContentBase: true
-	}
+	},
+	plugins: [
+		new webpack.HotModuleReplacementPlugin(),
+		new HtmlWebpackPlugin({
+			template: 'src/index.html',
+			filename: 'index.html',
+			inject: 'body'
+		})
+	]
 };

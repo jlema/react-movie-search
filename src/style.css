@@ -1,5 +1,6 @@
 html {
     font-size: 10px;
+    font-family: sans-serif;
 }
 
 * {
@@ -9,7 +10,7 @@ html {
 body {
     margin: 0;
     padding: 0;
-    background-color: rgb(244,244,244);
+    background-color: rgb(244, 244, 244);
     color: #333;
 }
 
@@ -23,17 +24,17 @@ small {
 
 .container {
     margin: 0 auto;
-    max-width:1000px;
+    max-width: 1000px;
     padding: 40px;
 }
 
 .title {
     font-size: 4.4rem;
-    text-align: center
+    text-align: center;
 }
 
 .form {
-    display:grid;
+    display: grid;
 }
 
 .label {
@@ -52,10 +53,10 @@ small {
 }
 
 .button {
-    background-color: rgba(0,0,0,0.75);
+    background-color: rgba(0, 0, 0, 0.75);
     color: white;
     padding: 1rem 2rem;
-    border: 1px solid rgba(0,0,0,0.75);
+    border: 1px solid rgba(0, 0, 0, 0.75);
     border-radius: 20px;
     font-size: 1.4rem;
     cursor: pointer;
@@ -63,16 +64,16 @@ small {
 }
 
 .button:hover {
-    background-color: rgba(0,0,0,0.85);
+    background-color: rgba(0, 0, 0, 0.85);
 }
 
-@media (min-width:786px){
+@media (min-width: 786px) {
     .form {
         grid-template-columns: auto 1fr auto;
         grid-gap: 1rem;
         align-items: center;
     }
-    
+
     .input {
         margin-bottom: 0;
     }
